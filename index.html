@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy Data Database</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+
+    <header class="base">
+        <h1>Title</h1>
+    </header>
+
+    <section class="base">
+        <p>Text talking about how you can search for members.</p>
+    </section>
+
+    <div class="base container_base">
+
+        <section>
+            <p>Section</p>
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="searchTable()">Search</button>
+            <button onclick="clearSearch()">Clear</button>
+        </section>
+
+        <aside>
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Date of Birth</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Suburb</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+            <script src="index.js"></script>
+        </aside>
+
+    </div>
+
+    <footer class="base">
+        <p>Footer</p>
+    </footer>
+
+</body>
+</html>

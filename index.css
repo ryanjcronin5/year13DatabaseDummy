@@ -1,0 +1,78 @@
+body {
+    /* Basic Styling */
+    background-color: cadetblue;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    /* Flexbox */
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+    align-content: start;
+}
+
+header {
+    margin-top: 0.5em !important;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 0 !important;
+    padding: 0.2em;
+    width: 100%;
+    background-color: darkcyan;
+    text-align: center;
+}
+
+.base {
+    flex: 0 0 auto;
+    margin: 0.05em 0.5em;
+}
+
+.container_base {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    align-content: start;
+}
+
+.container_base > * {
+    flex: 1 0 auto;
+    margin: 1px;
+}
+
+#resultTable {
+    border-collapse: collapse;
+    background-color: azure;
+    width: 75em;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    table-layout: fixed;
+    td {
+        overflow: hidden;
+        width: 1%;
+    }
+}
+
+th, td {
+    text-align: left;
+    padding: 16px 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
