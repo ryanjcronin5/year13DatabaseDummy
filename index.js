@@ -28,6 +28,27 @@ function clearSearch() {
     }
 }
 
+function adjustColumnWidth() {
+    const table = document.getElementById('resultTable');
+    const tableBody = document.getElementById('tableBody');
+    const headers = table.querySelectorAll('thead th');
+    const cells = tableBody.querySelectorAll('td');
+    const maxWidths = Array.from(headers).map((_, index) => {
+        return Math.max(...Array.from(cells).map((cell, rowIndex) => {
+            if (cell.cellIndex === index) {
+                return cell.offsetWidth;
+            }
+            return 0;
+        }));
+    });
+    headers.forEach((headers, index) => {
+        headers.style.width = maxWidths[index] + 'px';
+    });
+    cells.forEach((cell, index) => {
+        cell.style.width = maxWidths[index % headers.length] + 'px';
+    });
+}
+
 function populateTable(data) {
     const tableBody = document.getElementById('tableBody');
     tableBody.innerHTML = '';
@@ -58,5 +79,6 @@ const mockData = [
     { last_name: 'Arrol', first_name: 'Bruce', DOB: 'N/A', phoneNum: '021378180', email: 'bruce.arroll@auckland.ac.nz', suburb: 'Herne Bay' },
     { last_name: 'Arthur', first_name: 'Kevin', DOB: 'N/A', phoneNum: '021881065', email: 'kevinarthur@xtra.co.nz', suburb: 'N/A' },
 ];
-
+window.addEventListener('load', adjustColumnWidth);
+window.addEventListener('resize', adjustColumnWidth);
 populateTable(mockData);

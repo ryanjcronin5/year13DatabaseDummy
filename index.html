@@ -20,10 +20,17 @@
     <div class="base container_base">
 
         <section>
-            <p>Section</p>
+            <h3>Section</h3>
             <input type="text" id="searchInput" placeholder="Search...">
-            <button onclick="searchTable()">Search</button>
-            <button onclick="clearSearch()">Clear</button>
+            <div class="buttonGroup" style="width: 75%;">
+                <button class="button buttonSearch" onclick="searchTable()" style="width: 50%;">Search</button>
+                <button class="button buttonClear" onclick="clearSearch()" style="width: 50%;">Clear</button>
+            </div>
+            <h3>Database status:</h3>
+            <div class="status-box" id="statusBox">
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <div class="no-connection-text">Connecting to database...</div>
+            </div>
         </section>
 
         <aside>
@@ -47,7 +54,7 @@
     </div>
 
     <footer class="base">
-        <p>Footer</p>
+        <h3>Footer</h3>
     </footer>
 
 </body>
