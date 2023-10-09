@@ -1,16 +1,13 @@
 <?php
 include("dbc_inc.php");
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $searchTerm = $_GET["paramName"];
-	$searchColumns = [
-        "LastName",
-        "FirstName",
-        "DateofBirth",
-        "Suburb",
-        "City",
-        "Phone",
-        "Email"
-    ];
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            $searchTerm = $_GET["paramName"];
+        } else {
+            echo "<script>alert('Not set');</script>";
+        }
+    
+	$searchColumns = ["LastName", "FirstName", "DateofBirth", "Suburb", "City", "Phone", "Email"];
 	$whereClause = "";
     foreach ($searchColumns as $column) {
         if ($whereClause !== "") {
